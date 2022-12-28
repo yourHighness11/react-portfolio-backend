@@ -7,11 +7,11 @@ const createContact = async (req, res) => {
     email,
     message,
   });
-  await newContact.save((err) => {
+  await newContact.save((err, result) => {
     if (err) {
       console.log(err);
     } else {
-      res.status(201);
+      res.status(201).json({ message: result });
     }
   });
 };
