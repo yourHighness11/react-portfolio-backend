@@ -8,11 +8,11 @@ const dbConnect = require("./config/dbConnect");
 const cors = require("cors");
 const corsOptions = require("./config/corsOptions");
 dbConnect();
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/", contactRoute);
 
-app.listen(port, () => console.log(`server started on ${port}`));
+app.listen(port);
